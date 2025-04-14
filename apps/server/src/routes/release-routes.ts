@@ -5,10 +5,6 @@ import * as jobService from '../services/job/job.service'
 import * as releasesService from '../services/release/release.service'
 import { RequestProps } from '../types/types'
 
-interface ManualFetchBody {
-  dayLimit: number
-}
-
 const router = Router()
 
 router.use(requireAuth)
@@ -31,14 +27,21 @@ router.get(
 
 router.post(
   '/manual-fetch',
-  asyncHandler(async (req: RequestProps<ManualFetchBody>, res: Response) => {
-    const result = await jobService.nightlyJob({
-      isManual: true,
-      dayLimit: req.body.dayLimit,
-    })
+  asyncHandler(
+    async (
+      req: RequestProps<{
+        dayLimit: number
+      }>,
+      res: Response,
+    ) => {
+      const result = await jobService.nightlyJob({
+        isManual: true,
+        dayLimit: req.body.dayLimit,
+      })
 
-    res.json(result)
-  }),
+      res.json(result)
+    },
+  ),
 )
 
 export default router

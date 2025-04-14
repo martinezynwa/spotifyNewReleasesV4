@@ -5,6 +5,7 @@ import { errorHandler } from './lib/errorHandler'
 import artistsRouter from './routes/artist-routes'
 import groupsRouter from './routes/group-routes'
 import jobsRouter from './routes/job-routes'
+import logsRouter from './routes/log-routes'
 import releasesRouter from './routes/release-routes'
 import usersRouter from './routes/user-routes'
 
@@ -27,7 +28,7 @@ app.use('/groups', groupsRouter)
 app.use('/jobs', jobsRouter)
 app.use('/releases', releasesRouter)
 app.use('/users', usersRouter)
-
+app.use('/logs', logsRouter)
 app.use(errorHandler)
 
 app.listen(process.env.PORT, () => {
