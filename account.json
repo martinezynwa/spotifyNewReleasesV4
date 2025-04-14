@@ -1,0 +1,14 @@
+{
+  "id": "cm3xi52y40002yjfsq8qxpsx0",
+  "userId": "cm3xi52u00000yjfsulv7m0oy",
+  "type": "oauth",
+  "provider": "spotify",
+  "providerAccountId": "martinmgs",
+  "refresh_token": "AQD5zMEGDm4fHNjTRCMinQu-H5CQsGpWvZUEsO_s6tFUEOytBf42tanzKLVkUUtjWjZc49erhMfgwu3cNrHiJsu8sG2SLVIVY-M4tVRzGi48Kt42HoMHtBXuM7pFLFwwE6E",
+  "access_token": "BQBRP2m3zwWo5Ze2NQ6QNjApfeFJpBHJ6cxgnEGXYewGYFvGZDyeCXRxWvnp-ZkO0I8Ubo4L8oH_FLwvnnKRsjbuFUWKn0oKOzImR4NmcdCpAjjQTLGvKoZFHe9MWH6WE8ojrlGN8AXZ-1je5jGxenC8vWcLBaRVRYOtNY0oY_wVPoWeneDO2Y3CSELxuSBLjD2ZgdZo3W36zG5IYSz3LRpeklSCNh2eiSEUPBvOyyg",
+  "expires_at": 1732571410,
+  "token_type": "bearer",
+  "scope": "playlist-read-private user-follow-modify user-follow-read playlist-modify-private",
+  "id_token": null,
+  "session_state": null
+}

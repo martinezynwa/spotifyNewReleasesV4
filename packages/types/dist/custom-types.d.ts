@@ -1,0 +1,17 @@
+import { Insertable, Selectable, Updateable } from 'kysely';
+import { DB } from './database.types';
+export type Artist = Selectable<DB['Artist']>;
+export type Group = Selectable<DB['Group']>;
+export type Log = Selectable<DB['Log']>;
+export type Release = Selectable<DB['Release']>;
+export type User = Selectable<DB['User']>;
+export type CreateArtist = Insertable<DB['Artist']>;
+export type CreateGroup = Insertable<DB['Group']>;
+export type CreateLog = Insertable<DB['Log']>;
+export type CreateRelease = Insertable<DB['Release']>;
+export type CreateUser = Insertable<DB['User']>;
+export type UpdateArtist = Updateable<DB['Artist']>;
+export type UpdateGroup = Updateable<DB['Group']>;
+export type UpdateLog = Updateable<DB['Log']>;
+export type UpdateRelease = Updateable<DB['Release']>;
+export type UpdateUser = Updateable<DB['User']>;
