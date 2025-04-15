@@ -40,3 +40,10 @@ To start the backend server:
 ```bash
 yarn dev
 ```
+
+### Trigger.dev
+To start the Trigger.dev development server:
+```bash
+yarn trigger-dev
+```
+```

@@ -1,5 +1,4 @@
 import { DEFAULT_API_RESULTS_LIMIT, DEFAULT_DAY_LIMIT } from '../../constants'
-import { logger } from '../../utils/logger'
 import { getAccessToken } from '../../utils/token-handler'
 import {
   addArtistsToDatabase,
@@ -14,12 +13,8 @@ import {
 import { getAllUsers } from '../user/user.service'
 import { NightlyJobResult } from './job.service.types'
 
-export const nightlyJob = async ({ isManual, dayLimit }: NightlyJobResult) => {
-  !isManual &&
-    (await logger({
-      action: 'nightlyJob',
-      message: 'Nightly job started',
-    }))
+export const nightlyJob = async ({ dayLimit }: NightlyJobResult) => {
+  console.log('Nightly job started')
 
   const users = await getAllUsers()
 
@@ -43,11 +38,9 @@ export const nightlyJob = async ({ isManual, dayLimit }: NightlyJobResult) => {
       userId,
     })
 
-    !isManual &&
-      (await logger({
-        action: 'nightlyJob',
-        message: `${addedArtists} artists added, ${removedArtists} artists removed`,
-      }))
+    console.log(
+      `${addedArtists} artists added, ${removedArtists} artists removed`,
+    )
 
     const newReleases = await fetchAndFilterNewReleases({
       accessToken,
@@ -57,12 +50,7 @@ export const nightlyJob = async ({ isManual, dayLimit }: NightlyJobResult) => {
     })
 
     if (newReleases.length === 0) {
-      !isManual &&
-        (await logger({
-          action: 'nightlyJob',
-          message: 'No new releases added',
-          userId,
-        }))
+      console.log('No new releases added')
       return
     }
 
@@ -77,10 +65,6 @@ export const nightlyJob = async ({ isManual, dayLimit }: NightlyJobResult) => {
       followedArtistIds,
     })
 
-    !isManual &&
-      (await logger({
-        action: 'nightlyJob',
-        message: `Added ${addedNewReleases.length} new releases`,
-      }))
+    console.log(`Added ${addedNewReleases.length} new releases`)
   }
 }

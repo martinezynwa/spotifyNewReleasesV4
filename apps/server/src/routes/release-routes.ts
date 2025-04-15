@@ -35,7 +35,6 @@ router.post(
       res: Response,
     ) => {
       const result = await jobService.nightlyJob({
-        isManual: true,
         dayLimit: req.body.dayLimit,
       })
 
