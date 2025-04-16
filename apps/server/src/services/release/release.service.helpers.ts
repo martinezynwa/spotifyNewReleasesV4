@@ -46,6 +46,7 @@ export const getAllArtistsReleases = async ({
   const allReleases: APIArtistReleaseWithGroupId[] = []
 
   for (const artist of artists) {
+    await new Promise((resolve) => setTimeout(resolve, 500))
     const releasesOfArtist = await getAllReleasesOfSingleArtist({
       artist,
       accessToken,
